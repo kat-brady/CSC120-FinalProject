@@ -8,6 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         location = new Hashtable<String, Boolean>();
+        inventory = new ArrayList<String>();
 
         // This is a "flag" to let us know when the loop should end
         boolean stillPlaying = true;

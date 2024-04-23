@@ -73,25 +73,19 @@ public class BookRoom extends Room{
     }
 
     /*
-     * Modifies up method to allow player to exit the dungeon room
-     * Adjusts dungeon to false in Hashtable to indicate player has been to dungeon before, but is not currently there
-     * Adds/adjusts bookroom to Hashtable as current location
+     * Utilizes up method from parent class Room
      */
     public void up(){
-        System.out.println("You gaze upwards, feeling blindly in the darkness. Wait... is that a ladder?\n You climb the ladder, going upwards into a dimly lit room.");
-        Main.location.replace("dungeon", false);
-        if(Main.location.containsKey("bookRoom")){
-            Main.location.replace("bookRoom", true);
-        } else{
-            Main.location.put("bookRoom", true);
-        }
+        super.up();
     }
 
     /*
-     * Utilizes down method from parent class Room
+     * Adjusts down method to allow player to return to dungeon
      */
     public void down(){
-        super.down();
+        System.out.println("Below, you see the open trapdoor revealing a ladder. You lower yourself down and descend into the dungeon below.");
+        Main.location.replace("bookRoom",false);
+        Main.location.replace("dungeon", true);
     }
 
 

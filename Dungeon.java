@@ -61,7 +61,7 @@ public class Dungeon extends Room {
      * Adds/adjusts bookroom to Hashtable as current location
      */
     public void up(){
-        System.out.println("You gaze upwards, feeling blindly in the darkness. Wait... is that a ladder?\n You climb the ladder, going upwards into a dimly lit room.");
+        System.out.println("You gaze upwards, feeling blindly in the darkness. Wait... is that a ladder?\nYou climb the ladder, going upwards into a dimly lit room.");
         Main.location.replace("dungeon", false);
         if(Main.location.containsKey("bookRoom")){
             Main.location.replace("bookRoom", true);
