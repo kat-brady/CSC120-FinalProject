@@ -25,8 +25,6 @@ public class Main {
         System.out.println("You're so confused. Maybe you should try to find a way out.");
         location.put("dungeon", true);
 
-        // Instructions are sometimes helpful
-        System.out.println("INSERT INSTRUCTIONS");
 
         // The do...while structure means we execute the body of the loop once before checking the stopping condition
         do {
@@ -38,16 +36,49 @@ public class Main {
             if (userResponse.contains("LOOK")){
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.look();
-                } else if(location.get("bookroom")==true){
+                } else if(location.get("bookRoom")==true){
                     BookRoom.bookRoom.look();
                 }
             }
-            if (userResponse.contains("WEST")) {
+            else if (userResponse.contains("WEST")) {
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.west();
-                } else if(location.get("bookroom")==true){
+                } else if(location.get("bookRoom")==true){
                     BookRoom.bookRoom.west();
                 }
+            }else if (userResponse.contains("EAST")) {
+                if(location.get("dungeon")==true){
+                    Dungeon.dungeon.east();
+                } else if(location.get("bookRoom")==true){
+                    BookRoom.bookRoom.east();
+                }
+            }else if (userResponse.contains("NORTH")) {
+                if(location.get("dungeon")==true){
+                    Dungeon.dungeon.north();
+                } else if(location.get("bookRoom")==true){
+                    BookRoom.bookRoom.north();
+                }
+            }else if (userResponse.contains("SOUTH")) {
+                if(location.get("dungeon")==true){
+                    Dungeon.dungeon.south();
+                } else if(location.get("bookRoom")==true){
+                    BookRoom.bookRoom.south();
+                }
+            }else if (userResponse.contains("DOWN")) {
+                if(location.get("dungeon")==true){
+                    Dungeon.dungeon.down();
+                } else if(location.get("bookRoom")==true){
+                    BookRoom.bookRoom.down();
+                }
+            }else if (userResponse.contains("UP")) {
+                if(location.get("dungeon")==true){
+                    Dungeon.dungeon.up();
+                } else if(location.get("bookRoom")==true){
+                    BookRoom.bookRoom.up();
+                }
+            }
+             else{
+                System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");
             }
 
             // ***********************************************************************
