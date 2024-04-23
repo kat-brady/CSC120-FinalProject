@@ -32,7 +32,7 @@ public class BookRoom extends Room{
         } else{
             System.out.println("You try the handle. Locked. Drat!\nYour eyes turn to the mysterious fixture beside the door. Could it be a scanner?");
             if (Main.inventory.contains("accessCard")){
-                //if (Main.userResponse.contains("SWIPE")||("SCAN")){
+                //if (Main.userResponse.contains("SWIPE")|| Main.userResponse.contains("SCAN")){
                     //Main.location.replace("bookRoom", false);
                     //Main.location.put("fightRoom", true);
                     //System.out.println("You reach into your pocket to retrieve the access card. Cautiously, you hold it to the fixture.\nYou hear a beep and the sound of the door unlocking. You carefully open the door and pass through, your heart pounding.");
