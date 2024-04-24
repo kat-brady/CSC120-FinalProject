@@ -10,11 +10,7 @@ public class Dungeon extends Room {
      * Updates dungeon value to true to indicate it is the current room
      */
     public Dungeon(){
-        if(Main.location.containsKey("dungeon")){
-            Main.location.replace("dungeon", true);
-        } else{
-            Main.location.put("dungeon", true);
-        }
+        
     }
 
     /*

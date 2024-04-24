@@ -3,11 +3,29 @@
  * Open passage to the east, locked passage to the west
  */
 public class BookRoom extends Room{
-
+    boolean tryScan = false; //the player cannot yet attempt to scan the card
     /*
      * Constructs a BookRoom
      */
     public BookRoom(){
+    }
+
+    /*
+     * Method to swipe access card and unlock access to next room
+     * Checks if player has accessCard to see if they can swipe, updating location to fightRoom
+     */
+    public void swipeCard(){
+        if(tryScan){
+            if (Main.inventory.contains("accessCard")){
+                Main.location.replace("bookRoom", false);
+                Main.location.put("fightRoom", true);
+                System.out.println("You reach into your pocket to retrieve the access card. Cautiously, you hold it to the fixture.\nYou hear a beep and the sound of the door unlocking. You carefully open the door and pass through, your heart pounding.");
+            } else{
+                System.out.println("You have nothing to trigger the door to open!");
+            }
+        } else{
+        System.out.println("Maybe you should look around the room more.");
+        }
     }
 
     /*
@@ -21,7 +39,7 @@ public class BookRoom extends Room{
     /*
      * Modifies west method
      * Checks if player has been to fightRoom to see if they can pass, updating value
-     * If not, checks if player has accessCard to see if they can pass, updating location to fightRoom
+     * If not, calls swipeCard
      */
     public void west() {
         System.out.println("You approach the strange door to your west.");
@@ -31,17 +49,10 @@ public class BookRoom extends Room{
             System.out.println("The door is unlocked, so you pass through.");
         } else{
             System.out.println("You try the handle. Locked. Drat!\nYour eyes turn to the mysterious fixture beside the door. Could it be a scanner?");
-            if (Main.inventory.contains("accessCard")){
-                //if (Main.userResponse.contains("SWIPE")|| Main.userResponse.contains("SCAN")){
-                    //Main.location.replace("bookRoom", false);
-                    //Main.location.put("fightRoom", true);
-                    //System.out.println("You reach into your pocket to retrieve the access card. Cautiously, you hold it to the fixture.\nYou hear a beep and the sound of the door unlocking. You carefully open the door and pass through, your heart pounding.");
-                }
-            } //else{
-                //System.out.println("Maybe you should look around the room more.");
-            }
-        //}
-    //}
+            tryScan = true;
+        }
+    }
+    
 
     /*
      * Modifies east method

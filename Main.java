@@ -22,11 +22,11 @@ public class Main {
         String userResponse = "";
 
         //brief intro
+        location.put("dungeon", true);
         System.out.println("You slowly open your eyes, but everything remains black. Your head is pounding. Where are you?");
         System.out.println("You smell dirt, and come to realize the reason you can't see anything is because there is no light.");
         System.out.println("The last thing you seem to remember is walking your dog... how did you end up here? Are you dead?");
         System.out.println("You're so confused. Maybe you should try to find a way out.");
-        location.put("dungeon", true);
 
         /*
          * Loop through while the user is still playing
@@ -103,13 +103,19 @@ public class Main {
                 } else if(location.get("fightRoom")==true){
                     //FightRoom.fightRoom.up();
                 }
-            }else{
-                System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");
-            }
-
-
-            if (userResponse.equals("EXIT") || userResponse.equals("QUIT")) {
+            }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN")){
+                if(!location.containsKey("bookRoom")||location.get("bookRoom")==false){
+                    System.out.println("There is nothing to " + userResponse.toLowerCase() + " in this room.");    
+                }else{
+                    BookRoom.bookRoom.swipeCard();
+                }
+            }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
                 stillPlaying = false;
+            }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
+                System.out.println("INSERT VALUABLE HELP HERE");
+            }
+            else{
+                System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");
             }
         } while (stillPlaying);
 
