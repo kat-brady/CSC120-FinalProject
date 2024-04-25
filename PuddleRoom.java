@@ -3,7 +3,7 @@
  */
 public class PuddleRoom extends Room {
     /** The access card of a cult member in the puddle. */
-    public Item accessCard;
+    public static Item accessCard;
 
     /** The robe of a cult member hanging on a stalactite. */
     private Item cultRobe;

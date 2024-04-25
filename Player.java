@@ -1,4 +1,3 @@
-import java.util.List;
 
 /**
  * Represents the player character in the game.
@@ -7,9 +6,6 @@ public class Player {
     /** The health of the player. */
     private int health;
 
-    /** The inventory of the player. */
-    private Inventory inventory;
-
     /**
      * Constructs a new Player object with the specified initial health.
      *
@@ -17,7 +13,6 @@ public class Player {
      */
     public Player(int initialHealth) {
         this.health = initialHealth;
-        this.inventory = new Inventory();
     }
 
     /**
@@ -51,31 +46,45 @@ public class Player {
     }
 
     /**
-     * Retrieves the inventory of the player.
-     *
-     * @return the inventory of the player
-     */
-    public Inventory getInventory() {
-        return inventory;
-    }
-
-    /**
      * Adds an item to the player's inventory.
      *
      * @param item the item to add
      */
-    public void addItemToInventory(Item item) {
-        inventory.addItem(item);
+    public static void addItemToInventory(Item item) {
+        Main.inventory.add(item);
+        Main.itemLocation.remove(item);
+        System.out.println("You have picked up " + item.getName() + ".");
     }
 
     /**
      * Removes an item from the player's inventory.
      *
      * @param item the item to remove
-     * @return true if the item was successfully removed, false otherwise
      */
-    public boolean removeItemFromInventory(Item item) {
-        return inventory.removeItem(item);
+    public static void removeItemFromInventory(Item item) {
+        Main.inventory.remove(item);
+        if(Main.location.get("dungeon")==true){
+            Main.itemLocation.put(item, "dungeon");
+        } else if(Main.location.get("bookRoom")==true){
+            Main.itemLocation.put(item, "bookRoom");
+        } else if(Main.location.get("puddleRoom")==true){
+            Main.itemLocation.put(item, "puddleRoom");
+        } else if(Main.location.get("fightRoom")==true){
+            Main.itemLocation.put(item, "fightRoom");
+        } else if(Main.location.get("rocksRoom")==true){
+            Main.itemLocation.put(item, "rocksRoom");
+        } else if(Main.location.get("puzzleRoom")==true){
+            Main.itemLocation.put(item, "puzzleRoom");
+        } else if(Main.location.get("suppliesRoom")==true){
+            Main.itemLocation.put(item, "suppliesRoom");
+        } else if(Main.location.get("surveillanceRoom")==true){
+            Main.itemLocation.put(item, "surveillanceRoom");
+        } else if(Main.location.get("cultRoom")==true){
+            Main.itemLocation.put(item, "cultRoom");
+        } else if(Main.location.get("demonRoom")==true){
+            Main.itemLocation.put(item, "demonRoom");
+        }
+        System.out.println("You have dropped " + item + ".");
     }
 
     /**
@@ -85,15 +94,6 @@ public class Player {
      * @return true if the player's inventory contains the item, false otherwise
      */
     public boolean hasItemInInventory(Item item) {
-        return inventory.hasItem(item);
-    }
-
-    /**
-     * Retrieves the list of items in the player's inventory.
-     *
-     * @return the list of items in the player's inventory
-     */
-    public List<Item> getPlayerInventoryItems() {
-        return inventory.getItems();
+        return Main.inventory.contains(item);
     }
 }

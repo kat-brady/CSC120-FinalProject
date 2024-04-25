@@ -5,7 +5,10 @@ import java.util.*;
 public class Main {
 
     public static Hashtable<String, Boolean> location;
-    public static ArrayList<String> inventory;
+    public static Hashtable<Item, String> itemLocation;
+    public static ArrayList<Item> inventory;
+    //public static Inventory inventory;
+
 
     /*
      * Main body runs the loop
@@ -13,7 +16,9 @@ public class Main {
     public static void main(String[] args) {
 
         location = new Hashtable<String, Boolean>();
-        inventory = new ArrayList<String>();
+        inventory = new ArrayList<Item>();
+        itemLocation = new Hashtable<Item, String>();
+        //inventory = new Inventory();
 
         boolean stillPlaying = true;
 
@@ -112,7 +117,17 @@ public class Main {
             }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
-                System.out.println("INSERT VALUABLE HELP HERE");
+                System.out.println("You are trapped in a mysterious underground world. Everything feels unsettling and you seem to have lost your memory. How did you get down here? Where are you? How do you get out? All you know is that something is seriously wrong. If you want to escape with your life, you'll need to use your wits to explore and find a way out.");
+            }else if(userResponse.contains("INVENTORY")){
+               System.out.println(inventory);
+            }else if(userResponse.contains("PICK UP")||userResponse.contains("GRAB")||userResponse.contains("TAKE")){
+                if(userResponse.contains("NOTE")){
+                    if(location.containsKey("bookRoom")==true){
+                        BookRoom.bookRoom.pickUp(BookRoom.note);
+                    } else{
+                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }
+                }
             }
             else{
                 System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");

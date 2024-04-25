@@ -3,11 +3,25 @@
  * Open passage to the east, locked passage to the west
  */
 public class BookRoom extends Room{
-    boolean tryScan = false; //the player cannot yet attempt to scan the card
+    /*The player cannot yet attempt to scan the card, tryScan is used to check if player noticed the scanner yet*/
+    boolean tryScan = false; 
+    private static Item book;
+    public static Item note;
+    public static Item candle;
+
     /*
      * Constructs a BookRoom
      */
     public BookRoom(){
+        // Initialize the book item
+        book = new Item("book", "A mysterious book written in Latin. It is too heavy for you to carry.");
+        Main.itemLocation.put(book, "bookRoom");
+        //Initialize note
+        note = new Item("note", "A note hidden in the margins of the book. It seems much newer and is written in English.");
+        Main.itemLocation.put(note, "bookRoom");
+        // Initialize the candle item
+        candle = new Item("candle", "A partially melted candle.");
+        Main.itemLocation.put(candle, "bookRoom");
     }
 
     /*
@@ -16,7 +30,7 @@ public class BookRoom extends Room{
      */
     public void swipeCard(){
         if(tryScan){
-            if (Main.inventory.contains("accessCard")){
+            if (Main.inventory.contains(PuddleRoom.accessCard)){
                 Main.location.replace("bookRoom", false);
                 Main.location.put("fightRoom", true);
                 System.out.println("You reach into your pocket to retrieve the access card. Cautiously, you hold it to the fixture.\nYou hear a beep and the sound of the door unlocking. You carefully open the door and pass through, your heart pounding.");
@@ -29,11 +43,27 @@ public class BookRoom extends Room{
     }
 
     /*
+     * Method to allow player to pick up/take items
+     *@param item the item to be interacted with
+     */
+    public void pickUp(Item item) {
+        Player.addItemToInventory(item);
+    }
+
+    /*
+     * Method to allow player to drop items
+     * @param item the item to be dropped
+     */
+    public void drop(Item item) {
+        Player.removeItemFromInventory(item);
+    }
+
+    /*
      * Adjusts look method from parent class Room
      */
     public void look(){
         super.look();
-        System.out.println("You take in your surroundings, your eyes adjusting to the light. There is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
+        System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
     }
 
     /*
@@ -73,7 +103,7 @@ public class BookRoom extends Room{
      */
     public void north() {
         super.north();
-        System.out.println("Along the wall rests the large table made of gnarled, decaying wood. You reach out to touch it.\nOww! A splinter!");
+        System.out.println("Along the wall rests the large table made of gnarled, decaying wood. On top of the table, there is a large, open book.\nIn the dim light, you see a few bugs crawl across the table.\nUnderneath it is a partially melted candles. You feel a sense of unease looking at it.");
     }
 
     /*
