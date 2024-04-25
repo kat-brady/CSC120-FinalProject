@@ -7,6 +7,7 @@ public class Main {
     public static Hashtable<String, Boolean> location;
     public static Hashtable<Item, String> itemLocation;
     public static ArrayList<Item> inventory;
+    public static String attackMethod;
     //public static Inventory inventory;
 
 
@@ -46,7 +47,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.look();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.look();
+                    FightRoom.fightRoom.look();
                 }
             }else if (userResponse.contains("WEST")) {
                 if(location.get("dungeon")==true){
@@ -56,7 +57,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.west();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.west();
+                    FightRoom.fightRoom.west();
                 }
             }else if (userResponse.contains("EAST")) {
                 if(location.get("dungeon")==true){
@@ -66,7 +67,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.east();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.east();
+                    FightRoom.fightRoom.east();
                 }
             }else if (userResponse.contains("NORTH")) {
                 if(location.get("dungeon")==true){
@@ -76,7 +77,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.north();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.north();
+                    FightRoom.fightRoom.north();
                 }
             }else if (userResponse.contains("SOUTH")) {
                 if(location.get("dungeon")==true){
@@ -86,7 +87,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.south();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.south();
+                    FightRoom.fightRoom.south();
                 }
             }else if (userResponse.contains("DOWN")) {
                 if(location.get("dungeon")==true){
@@ -96,7 +97,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.down();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.down();
+                    FightRoom.fightRoom.down();
                 }
             }else if (userResponse.contains("UP")) {
                 if(location.get("dungeon")==true){
@@ -106,7 +107,7 @@ public class Main {
                 } else if(location.get("puddleRoom")==true){
                     //PuddleRoom.puddleRoom.up();
                 } else if(location.get("fightRoom")==true){
-                    //FightRoom.fightRoom.up();
+                    FightRoom.fightRoom.up();
                 }
             }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN")){
                 if(!location.containsKey("bookRoom")||location.get("bookRoom")==false){
@@ -114,7 +115,14 @@ public class Main {
                 }else{
                     BookRoom.bookRoom.swipeCard();
                 }
-            }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
+            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")){
+                if(location.contains("fightRoom")==true){
+                    attackMethod = userResponse.toLowerCase();
+                    FightRoom.fightRoom.attack();
+                } else{
+                    System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
+                }
+            }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")|| Player.die()) {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
                 System.out.println("You are trapped in a mysterious underground world. Everything feels unsettling and you seem to have lost your memory. How did you get down here? Where are you? How do you get out? All you know is that something is seriously wrong. If you want to escape with your life, you'll need to use your wits to explore and find a way out.");
@@ -138,6 +146,8 @@ public class Main {
 
         if (userResponse.equals("EXIT")|| userResponse.equals("QUIT")) {
             System.out.println("You have left the game. Shame. Looks like your character will be trapped in that cave forever...");
+        } else if(Player.die()){
+            System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
         } else { 
             System.out.println("To be edited...");
         }

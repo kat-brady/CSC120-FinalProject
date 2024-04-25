@@ -39,9 +39,9 @@ public class Player {
     /**
      * Handles the player's death.
      */
-    private void die() {
+    public static boolean die() {
         // Reset the game state, display game over message, etc.
-        System.out.println("You have died. Game over.");
+       return true;
         // Additional logic such as resetting the game state or allowing the player to restart
     }
 
@@ -96,4 +96,6 @@ public class Player {
     public boolean hasItemInInventory(Item item) {
         return Main.inventory.contains(item);
     }
+
+    static Player player = new Player(100);
 }
