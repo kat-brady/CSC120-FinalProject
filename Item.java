@@ -3,10 +3,10 @@
  */
 public class Item {
     /** The name of the item. */
-    private String name;
+    public String name;
 
     /** The description of the item. */
-    private String description;
+    public String description;
 
     /**
      * Constructs a new Item object with the specified name and description.

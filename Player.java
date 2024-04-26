@@ -4,7 +4,7 @@
  */
 public class Player {
     /** The health of the player. */
-    private int health;
+    public int health;
 
     /**
      * Constructs a new Player object with the specified initial health.
@@ -39,7 +39,7 @@ public class Player {
     /**
      * Handles the player's death.
      */
-    public static boolean die() {
+    public boolean die() {
         // Reset the game state, display game over message, etc.
        return true;
         // Additional logic such as resetting the game state or allowing the player to restart
