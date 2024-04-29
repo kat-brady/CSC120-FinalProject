@@ -9,8 +9,20 @@ public class Dungeon extends Room {
      * Updates Hashtable to add dungeon as a location if the player has never been
      * Updates dungeon value to true to indicate it is the current room
      */
-    public Dungeon(){
-        
+    public Dungeon(){  
+    }
+    /*
+     * Utilizes pickUp method from Room class
+     */
+    public void pickUp(Item item) {
+        super.pickUp(item);
+    }
+
+    /*
+     * Utilizes drop method from Room class
+     */
+    public void drop(Item item) {
+        super.drop(item);
     }
 
     /*

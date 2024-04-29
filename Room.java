@@ -30,6 +30,22 @@ public class Room {
         }
     }
 
+     /*
+     * Method to allow player to pick up/take items
+     *@param item the item to be interacted with
+     */
+    public void pickUp(Item item) {
+        Player.addItemToInventory(item);
+    }
+
+    /*
+     * Method to allow player to drop items
+     * @param item the item to be dropped
+     */
+    public void drop(Item item) {
+        Player.removeItemFromInventory(item);
+    }
+
     /**
      * Adds an item to the room.
      *

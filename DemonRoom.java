@@ -8,6 +8,20 @@ public class DemonRoom extends Room{
     public DemonRoom(){
     }
 
+    /*
+     * Utilizes pickUp method from Room class
+     */
+    public void pickUp(Item item) {
+        super.pickUp(item);
+    }
+
+    /*
+     * Utilizes drop method from Room class
+     */
+    public void drop(Item item) {
+        super.drop(item);
+    }
+
 
     /*
      * Modifies look method from parent class Room

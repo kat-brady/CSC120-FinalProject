@@ -43,19 +43,17 @@ public class BookRoom extends Room{
     }
 
     /*
-     * Method to allow player to pick up/take items
-     *@param item the item to be interacted with
+     * Utilizes pickUp method from Room class
      */
     public void pickUp(Item item) {
-        Player.addItemToInventory(item);
+        super.pickUp(item);
     }
 
     /*
-     * Method to allow player to drop items
-     * @param item the item to be dropped
+     * Utilizes drop method from Room class
      */
     public void drop(Item item) {
-        Player.removeItemFromInventory(item);
+        super.drop(item);
     }
 
     /*

@@ -43,12 +43,24 @@ public class Main {
             }else if (userResponse.contains("LOOK")){
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.look();
-                } else if(location.get("bookRoom")==true){
+                }else if(location.get("bookRoom")==true){
                     BookRoom.bookRoom.look();
-                } else if(location.get("puddleRoom")==true){
+                }else if(location.get("puddleRoom")==true){
                     PuddleRoom.puddleRoom.look();
                }else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.look();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.look();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.look();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.look();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.look();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.look();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.look();
                 }
             }else if(userResponse.contains("PICK UP")||userResponse.contains("GRAB")||userResponse.contains("TAKE")){
                 if(userResponse.contains("NOTE")){
@@ -86,6 +98,18 @@ public class Main {
                     PuddleRoom.puddleRoom.west();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.west();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.west();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.west();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.west();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.look();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.west();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.west();
                 }
             }else if (userResponse.contains("EAST")) {
                 if(location.get("dungeon")==true){
@@ -96,6 +120,18 @@ public class Main {
                     PuddleRoom.puddleRoom.east();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.east();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.east();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.east();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.east();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.east();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.east();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.east();
                 }
             }else if (userResponse.contains("NORTH")) {
                 if(location.get("dungeon")==true){
@@ -106,6 +142,18 @@ public class Main {
                     PuddleRoom.puddleRoom.north();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.north();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.north();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.north();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.north();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.north();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.north();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.north();
                 }
             }else if (userResponse.contains("SOUTH")) {
                 if(location.get("dungeon")==true){
@@ -116,6 +164,18 @@ public class Main {
                     PuddleRoom.puddleRoom.south();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.south();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.south();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.south();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.south();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.south();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.south();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.south();
                 }
             }else if (userResponse.contains("DOWN")) {
                 if(location.get("dungeon")==true){
@@ -126,6 +186,18 @@ public class Main {
                     PuddleRoom.puddleRoom.down();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.down();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.down();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.down();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.down();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.down();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.down();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.down();
                 }
             }else if (userResponse.contains("UP")) {
                 if(location.get("dungeon")==true){
@@ -136,6 +208,18 @@ public class Main {
                     PuddleRoom.puddleRoom.up();
                 } else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.up();
+                }else if(location.get("rocksRoom")==true){
+                    RocksRoom.rocksroom.up();
+                }else if(location.get("puzzleRoom")==true){
+                    PuzzleRoom.puzzleroom.up();
+                //}else if(location.get("suppliesRoom")==true){
+                    //SuppliesRoom.suppliesRoom.up();
+                }else if(location.get("surveillanceRoom")==true){
+                    SurveillanceRoom.surveillanceRoom.up();
+                //}else if(location.get("cultRoom")==true){
+                    //CultRoom.cultRoom.up();
+                }else if(location.get("demonRoom")==true){
+                    DemonRoom.demonRoom.up();
                 }
             }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN")){
                 if(!location.containsKey("bookRoom")||location.get("bookRoom")==false){
