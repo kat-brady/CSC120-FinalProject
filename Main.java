@@ -31,7 +31,7 @@ public class Main {
         System.out.println("You smell dirt, and come to realize the reason you can't see anything is because there is no light.");
         System.out.println("The last thing you seem to remember is walking your dog... how did you end up here? Are you dead?");
         System.out.println("You're so confused. Maybe you should try to find a way out.");
-        inventory.add(PuddleRoom.accessCard);
+        //inventory.add(PuddleRoom.accessCard);//TEMPORARY
 
         /*
          * Loop through while the user is still playing
@@ -63,7 +63,17 @@ public class Main {
                     }else{
                         System.out.println("There is no " + userResponse.toLowerCase() + " here.");
                     }
-                }else{
+                }else if(userResponse.contains("CARD")) {
+                    if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(PuddleRoom.accessCard);
+                    }
+                    else{
+                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }
+                }else if(userResponse.contains("ROBE")) {
+                    if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(PuddleRoom.cultRobe);
+                    }else{
                     System.out.println("You can't pick that up!");
                 }
             }else if (userResponse.contains("WEST")) {
@@ -139,6 +149,14 @@ public class Main {
                     }else{
                     System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                 }
+            }else if(userResponse.contains("WATCH")){
+                if(location.contains("surveillanceRoom")){
+                    if(location.get("surveillanceRoom")==true){
+                        SurveillanceRoom.surveillanceRoom.watch();
+                    }else{
+                        System.out.println("There is nothing to watch here.");
+                    }
+                }System.out.println("There is nothing to watch here.");
             }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {

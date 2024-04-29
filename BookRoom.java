@@ -62,7 +62,6 @@ public class BookRoom extends Room{
      * Adjusts look method from parent class Room
      */
     public void look(){
-        super.look();
         System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
     }
 

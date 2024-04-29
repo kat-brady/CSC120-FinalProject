@@ -6,12 +6,16 @@ import java.util.*;
  */
 public class FightRoom extends Room{
     boolean isDefeated = false; //while the cult member has not been defeated, the boolean is false to limit movement
-    int cultMemberHealth = 100;
-    List<Integer> possibleDamageToFoe = Arrays.asList(0, 0, 1, 10, 10, 10, 10, 11, 12, 15, 5, 5, 18, 19, 20, 23, 26);
-    List<Integer> possibleDamageToPlayer = Arrays.asList(0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+    int cultMemberHealth = 100; //initializes cult member's health
+    List<Integer> possibleDamageToFoe = Arrays.asList(0, 0, 1, 10, 10, 10, 10, 11, 12, 15, 5, 5, 18, 19, 20, 23, 26); //possible damage you could deal
+    List<Integer> possibleDamageToPlayer = Arrays.asList(0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10); //possible damage they could deal
     Random random = new Random();
     public static Item spear;
 
+    /*
+     * Constructs FightRoom
+     * initializes the spear item
+     */
     public FightRoom(){
         spear = new Item("spear", "A long, pointy spear. It looks like it would be good for throwing.");
         Main.itemLocation.put(spear, "fightRoom");
@@ -19,6 +23,9 @@ public class FightRoom extends Room{
 
     /*
      * Method to fight the cult member
+     * considers isDefeated and Player.player.health to assess viability of fight
+     * Randomly selects value from list for damage dealt
+     * when cultMemberHealth<=0, isDefeated
      */
     public void attack(){
         String attackMethod = Main.attackMethod;
@@ -57,7 +64,7 @@ public class FightRoom extends Room{
         }
     }
 
-        /*
+    /*
      * Method to allow player to pick up/take items
      *@param item the item to be interacted with
      */
@@ -167,5 +174,8 @@ public class FightRoom extends Room{
         }
     }
 
+    /*
+     * Initializes an instance of the class
+     */
     static FightRoom fightRoom = new FightRoom();
 }
