@@ -9,42 +9,94 @@ public class PuzzleRoom extends Room {
 
     /**
      * Constructs a PuzzleRoom with the given description.
-     *
-     * @param description The description of the room.
      */
-    public PuzzleRoom(String description) {
-        super(description);
+    public PuzzleRoom() {
         scanner = new Scanner(System.in);
         solved = false;
     }
 
+    /*
+     * Adjusts look method from parent class Room
+     */
+    public void look(){
+        super.look(); 
+        System.out.println("You look around the room with the air charged with mystery, and the dim torchlight casts eerie shadows on the ancient stone walls");
+    }
+
+    /*
+     * Adjusts west method from parent class Room
+     */
+    public void west() {
+        super.west();
+    }
+
+    /*
+     * Utilizes east method from parent class Room
+     */
+    public void east(){
+        super.east();
+        System.out.println("You turn east and see a large, ornate pedestal.");
+        System.out.println("A voice echoes through the chamber, enigmatic and cryptic.");
+        interact();
+    }
+
+    /*
+     * Adjusts north method from parent class Room
+     */
+    public void north() {
+        super.north();
+    }
+
+    /*
+     * Utilizes south method from parent class Room
+     */
+    public void south(){
+        super.south();
+    }
+
+    /*
+     * Utilizes up method from parent class Room
+     */
+    public void up(){
+        super.up();
+    }
+
+    /*
+     * Utilizes down method from parent class Room
+     */
+    public void down(){
+        super.down();
+        System.out.println("You go down and leave the room");
+        Main.location.replace("puzzleroom", false);
+        Main.location.replace("rocksroom", true);
+    }
+
+    
     /**
      * Interacts with the puzzle in the room, allowing the player to attempt to solve it.
      */
     public void interact() {
-        System.out.println("You enter a room with a mysterious puzzle...");
-        System.out.println("You need to solve the puzzle to proceed further.");
 
         // Present the riddle puzzle to the player
         System.out.println("In whispers hushed, I cast out dread, with prayers and faith, evil I shred. What am I?");
-        System.out.print("Your answer: ");
-        String playerAnswer = scanner.nextLine().trim().toLowerCase();
+        while(!solved){
+            System.out.print("Your answer: ");
+            String playerAnswer = scanner.nextLine().trim().toLowerCase();
 
-        // Check if the player's answer is correct
-        if (playerAnswer.equals("exorcism")) {
-            System.out.println("Congratulations! You've solved the puzzle.");
-            solved = true;
-        } else {
-            System.out.println("Incorrect answer. Keep exploring the room.");
+            // Check if the player's answer is correct
+            if (playerAnswer.equals("exorcism")) {
+                System.out.println("Congratulations! You've solved the puzzle. You may now proceed.");
+                solved = true;
+                Main.location.replace("puzzleroom", false);
+                Main.location.replace("suppliesroom", true);
+            } else {
+                System.out.println("Incorrect answer. Try again.");
         }
     }
-
-    /**
-     * Checks if the puzzle in the room has been solved.
-     *
-     * @return true if the puzzle has been solved, false otherwise.
-     */
-    public boolean isSolved() {
-        return solved;
     }
+    /*
+     * Creates an instance of the PuzzleRoom class
+     */
+    static PuzzleRoom puzzleroom = new PuzzleRoom();
+
 }
