@@ -42,9 +42,9 @@ public class Main {
             }else if (userResponse.contains("LOOK")){
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.look();
-                } else if(location.get("bookRoom")==true){
+                }else if(location.get("bookRoom")==true){
                     BookRoom.bookRoom.look();
-                } else if(location.get("puddleRoom")==true){
+                }else if(location.get("puddleRoom")==true){
                     PuddleRoom.puddleRoom.look();
                 }else if(location.get("fightRoom")==true){
                     FightRoom.fightRoom.look();
@@ -270,6 +270,10 @@ public class Main {
                     }else{
                         System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
+                }else if(location.containsKey("demonRoom")){
+                    if(location.get("demonRoom")==true){
+                        System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
+                    }
                 }else{
                     System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                 }
@@ -280,7 +284,9 @@ public class Main {
                     }else{
                         System.out.println("There is nothing to watch here.");
                     }
-                }System.out.println("There is nothing to watch here.");
+                }else{
+                    System.out.println("There is nothing to watch here.");
+                }
             }else if(userResponse.contains("CLIMB")){
                 if(location.get("rocksRoom")==true){
                     RocksRoom.rocksRoom.climbRocks();
@@ -291,7 +297,7 @@ public class Main {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
                 System.out.println("You are trapped in a mysterious underground world. Everything feels unsettling and you seem to have lost your memory. How did you get down here? Where are you? How do you get out? All you know is that something is seriously wrong. If you want to escape with your life, you'll need to use your wits to explore and find a way out.");
-            }else if(userResponse.contains("INVENTORY")){ //this needs to be fixed!!!!!
+            }else if(userResponse.contains("INVENTORY")){ 
                 for(Item item: inventory){
                     System.out.println(item);
                 }
@@ -306,8 +312,11 @@ public class Main {
             System.out.println("You have left the game. Shame. Looks like your character will be trapped in that cave forever...");
         } else if(Player.player.die()){
             System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
-        } else { 
-            System.out.println("To be edited...");
+        }else if(DemonRoom.demonRoom.isDefeated){
+            System.out.println("At Javaelith's disappearance, you notice a ladder leading upwards in the corner. You climb it eagerly.\nYou're out of the cave, standing atop a mountain. Ah, fresh air! How you missed this feeling.\nYou're fully convinced that you're traumatized by this experience, but at least you can go home now.");
+            System.out.println("You have won! Congratulations, player!");
+        }else { 
+            System.out.println("An unexpected condition has ended your game.");
         }
     }
 }
