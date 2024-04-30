@@ -2,6 +2,7 @@
  * Represents a room where the summoned demon is being held
  * The player must fight the demon and win to win the game
  * Entrance below, but the player cannot exit that way, since this is the last room in the game
+ *
  */
 public class DemonRoom extends Room{
     
