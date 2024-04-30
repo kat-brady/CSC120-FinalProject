@@ -29,7 +29,6 @@ public class Dungeon extends Room {
      * Adjusts look method from parent class Room
      */
     public void look(){
-        super.look();
         System.out.println("You look around, but you can't go anywhere. You appear to be in some kind of dungeon. Maybe if you feel your surroundings, you can find a way out.");
     }
 

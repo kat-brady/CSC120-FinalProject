@@ -76,9 +76,11 @@ public class BookRoom extends Room{
      */
     public void look(){
         if(!leftRoom){
-            System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
+            System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nThe room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
         }else{
             System.out.println("You take in your surroundings. The old, gnarled table remains in the corner, but appears empty. It looks like someone has been in here recently...");
+        }if(!Player.player.hasItemInInventory(candle)){
+            System.out.println("Near the table, a partially burned candle rests on the floor. Maybe it could be useful.");
         }
         
     }
@@ -121,7 +123,14 @@ public class BookRoom extends Room{
      */
     public void north() {
         super.north();
-        System.out.println("Along the wall rests the large table made of gnarled, decaying wood. On top of the table, there is a large, open book.\nIn the dim light, you see a few bugs crawl across the table.\nUnderneath it is a partially melted candles. You feel a sense of unease looking at it.");
+        if(!leftRoom){
+            System.out.println("Along the wall rests the large table made of gnarled, decaying wood. On top of the table, there is a large, open book.\nIn the dim light, you see a few bugs crawl across the table. You feel a sense of unease looking at it.");
+        }else{
+            System.out.println("Along the wall rests an empty, rotting table. Most of it is covered in dust, except for a book-shaped spot... maybe a book used to be here.");
+        }if(!Player.player.hasItemInInventory(candle)){
+            System.out.println("There is a partially melted candle beneath the table as well.");
+        }
+       
     }
 
     /*
