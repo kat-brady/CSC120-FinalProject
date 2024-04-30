@@ -56,8 +56,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.look();
                 }else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.look();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.look();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.look();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.look();
                 }
@@ -141,8 +141,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.west();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.west();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.west();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.west();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.west();
                 }
@@ -163,8 +163,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.east();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.east();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.east();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.east();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.east();
                 }
@@ -185,8 +185,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.north();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.north();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.north();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.north();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.north();
                 }
@@ -207,8 +207,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.south();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.south();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.south();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.south();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.south();
                 }
@@ -229,8 +229,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.down();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.down();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.down();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.down();
                 } else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.down();
                 } 
@@ -251,8 +251,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.up();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.up();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.up();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.up();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.up();
                 }
