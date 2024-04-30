@@ -67,20 +67,20 @@ public class Main {
                     if(location.containsKey("bookRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("bookRoom")){
                         BookRoom.bookRoom.pickUp(BookRoom.note);
                     } else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                        System.out.println("There is no note here.");
                     }
                 }else if(userResponse.contains("SPEAR")){
                     if(location.containsKey("fightRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("fightRoom")){
                         FightRoom.fightRoom.pickUp(FightRoom.spear);
                     }else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                        System.out.println("There is no spear here.");
                     }
                 }else if(userResponse.contains("CARD")) {
                     if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("puddleRoom")){
                         PuddleRoom.puddleRoom.pickUp(PuddleRoom.accessCard);
                     }
                     else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                        System.out.println("There is no card here.");
                     }
                 }else if(userResponse.contains("ROBE")) {
                     if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("puddleRoom")){
@@ -88,7 +88,19 @@ public class Main {
                     }else{
                     System.out.println("You can't pick that up!");
                 }
-            }
+                }else if(userResponse.contains("CANDLE")){
+                    if(location.containsKey("bookRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(BookRoom.candle);
+                    } else{
+                        System.out.println("There is no candle here.");
+                    }
+                }else if(userResponse.contains("BOOK")){
+                    if(location.containsKey("bookRoom")==true){
+                        BookRoom.bookRoom.interact();
+                    }else{
+                        System.out.println("There is no book here.");
+                    }
+                }
             }else if (userResponse.contains("WEST")) {
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.west();
