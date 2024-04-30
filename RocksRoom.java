@@ -55,7 +55,6 @@ public class RocksRoom extends Room {
      * Adjusts look method from parent class Room
      */
     public void look(){
-        super.look(); 
         System.out.println("You look around and find yourself in a big dark room");
     }
 

@@ -18,7 +18,7 @@ public class SuppliesRoom extends Room{
         matches = new Item("matches", "A little box of matches found in supplies room.");
         Main.itemLocation.put(matches, "suppliesRoom");
         bottle = new Item("bottle", "A water bottle found in supplies room.");
-        Main.itemLocation.put(matches, "suppliesRoom");
+        Main.itemLocation.put(bottle, "suppliesRoom");
     }
 
     /*
