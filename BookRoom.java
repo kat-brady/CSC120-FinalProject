@@ -5,19 +5,16 @@
 public class BookRoom extends Room{
     /*The player cannot yet attempt to scan the card, tryScan is used to check if player noticed the scanner yet*/
     boolean tryScan = false; 
-    private static Item book;
     public static Item note;
     public static Item candle;
+    boolean leftRoom = false;
 
     /*
      * Constructs a BookRoom
      */
     public BookRoom(){
-        // Initialize the book item
-        book = new Item("book", "A mysterious book written in Latin. It is too heavy for you to carry.");
-        Main.itemLocation.put(book, "bookRoom");
         //Initialize note
-        note = new Item("note", "A note hidden in the margins of the book. It seems much newer and is written in English.");
+        note = new Item("note", "A note found hidden in the margins of the book. It seems much newer and is written in English. It reads: 'With beasts so large as Javaelith, normal techniques won't work. Carry with you water, pure and divine; salt for safety; and use your wits. He is a dangerous foe, one you would be wise to avoid.'");
         Main.itemLocation.put(note, "bookRoom");
         // Initialize the candle item
         candle = new Item("candle", "A partially melted candle.");
@@ -32,6 +29,7 @@ public class BookRoom extends Room{
         if(tryScan){
             if (Main.inventory.contains(PuddleRoom.accessCard)){
                 Main.location.replace("bookRoom", false);
+                leftRoom = true;
                 Main.location.put("fightRoom", true);
                 System.out.println("You reach into your pocket to retrieve the access card. Cautiously, you hold it to the fixture.\nYou hear a beep and the sound of the door unlocking. You carefully open the door and pass through, your heart pounding.");
             } else{
@@ -43,27 +41,46 @@ public class BookRoom extends Room{
     }
 
     /*
-     * Method to allow player to pick up/take items
-     *@param item the item to be interacted with
+     * Method to allow player to interact with the book and learn about it
+     * Changes text if player has already been to the room before
      */
-    public void pickUp(Item item) {
-        Player.addItemToInventory(item);
+    public void interact(){
+        if(!leftRoom){
+            System.out.println("You attempt to pick up the book, but it is so heavy! It gets dust and dirt all over your arms. Probably best to just leave it here.\nYou decide to just look at it instead. It is massive, and the pages appear ancient. You're not sure how long ago it was written.\nIn fact, it looks handwritten... Speaking of writing, you don't quite recognize the language. Could it be latin?\nYou flip through a few pages. There are a few drawings in the text, mostly of weird shapes. A pentagram, maybe?");
+            if(Main.itemLocation.containsKey(note)){
+                System.out.println("You flip one more page and notice a note resting inside the book. It is in English, and appears to have been written pretty recently.\nIt reads: 'With beasts so large as Javaelith, normal techniques won't work. Carry with you water, pure and divine; salt for safety; and use your wits. He is a dangerous foe, one you would be wise to avoid.'\nHuh... you're not sure what that means. Maybe you should hold onto this note.");
+            }
+        }else{
+            System.out.println("There used to be a book here, right? Where did it go...? Maybe you aren't alone down here after all...");
+        }
+        
     }
 
     /*
-     * Method to allow player to drop items
-     * @param item the item to be dropped
+     * Utilizes pickUp method from Room class
+     */
+    public void pickUp(Item item) {
+        super.pickUp(item);
+    }
+
+    /*
+     * Utilizes drop method from Room class
      */
     public void drop(Item item) {
-        Player.removeItemFromInventory(item);
+        super.drop(item);
     }
 
     /*
      * Adjusts look method from parent class Room
+     * Changes text depending on if it is player's first time in the room
      */
     public void look(){
-        super.look();
-        System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
+        if(!leftRoom){
+            System.out.println("You take in your surroundings, your eyes adjusting to the light. You're not sure where the light is coming from, but it doesn't seem natural.\nThere is an old, thick book lying open on a rotting wooden table across the room.\nThe floor below contains a propped open trapdoor, which leads to the dungeon you just left. Could someone have left it open by mistake?\nNear the table, partially burned candles rest on the floor. The room smells vaguely of sulfur, and it gives you the creeps. You feel a growing sense of dread just standing there.");
+        }else{
+            System.out.println("You take in your surroundings. The old, gnarled table remains in the corner, but appears empty. It looks like someone has been in here recently...");
+        }
+        
     }
 
     /*
@@ -91,6 +108,7 @@ public class BookRoom extends Room{
     public void east(){
         System.out.println("To the east, there is a narrow crack in the cavern wall. It is clear that, unlike the room you are in, this crack wasn't made by human hands.\nMaybe the crack is just wide enough for you to slip through...\nHesitantly, you turn sideways and shuffle into the passageway. Here's hoping you don't regret it.");
         Main.location.replace("bookRoom", false);
+        leftRoom = true;
         if(Main.location.containsKey("puddleRoom")){
             Main.location.replace("puddleRoom", true);
         } else{
