@@ -24,7 +24,7 @@ public class RocksRoom extends Room {
             return;
         }
 
-        if (!climbedRocks) {
+        while (!climbedRocks) {
             System.out.println("You attempt to climb the rocks...");
             boolean success = false;
 
@@ -35,16 +35,18 @@ public class RocksRoom extends Room {
                     System.out.println("You successfully climb the rocks and reach the ledge!");
                     climbedRocks = true;
                     success = true;
+                    if (Main.location.contains("puzzleRoom")){
+                        Main.location.replace("puzzleRoom", true);
+                        Main.location.replace("rocksRoom", false);
+                    }else{
+                        Main.location.put("puzzleRoom", true);
+                        Main.location.replace("rocksRoom", false);
+                    }
                 } else {
                     System.out.println("You struggle to find a secure grip on the rocks and slip back down.");
                     System.out.println("You decide to try again...");
                 }
             }
-        }
-        else{
-            System.out.println("You successfully climbed the rocks and left the room");
-            Main.location.replace("rocksroom", false);
-            Main.location.replace("puzzleroom", true);
         }
 
     }
@@ -106,8 +108,22 @@ public class RocksRoom extends Room {
     }
 
     /*
+     * Utilizes pickUp method from Room class
+     */
+    public void pickUp(Item item) {
+        super.pickUp(item);
+    }
+
+    /*
+     * Utilizes drop method from Room class
+     */
+    public void drop(Item item) {
+        super.drop(item);
+    }
+
+    /*
      * Creates an instance of the RocksRoom class for the rocks room
      */
-    static RocksRoom rocksroom = new RocksRoom();
+    static RocksRoom rocksRoom = new RocksRoom();
 
 }
