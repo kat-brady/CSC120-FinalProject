@@ -56,8 +56,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.look();
                 }else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.look();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.look();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.look();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.look();
                 }
@@ -141,8 +141,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.west();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.west();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.west();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.west();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.west();
                 }
@@ -163,8 +163,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.east();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.east();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.east();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.east();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.east();
                 }
@@ -185,8 +185,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.north();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.north();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.north();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.north();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.north();
                 }
@@ -207,8 +207,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.south();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.south();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.south();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.south();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.south();
                 }
@@ -229,8 +229,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.down();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.down();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.down();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.down();
                 } else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.down();
                 } 
@@ -251,8 +251,8 @@ public class Main {
                     SuppliesRoom.suppliesRoom.up();
                 } else if(location.get("surveillanceRoom")==true){
                     SurveillanceRoom.surveillanceRoom.up();
-                //}else if(location.get("cultRoom")==true){
-                    //CultRoom.cultRoom.up();
+                }else if(location.get("cultRoom")==true){
+                    CultRoom.cultRoom.up();
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.up();
                 }
@@ -287,6 +287,12 @@ public class Main {
                 } else{
                     System.out.println("There is nothing to climb here.");
                 }
+            }else if (userResponse.contains("FILL")){
+                if (location.get("puddleRoom")){
+                    PuddleRoom.puddleRoom.fillBottle(null);
+                } else{
+                    System.out.println("You can't fill the bottle here!");
+                }
             }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
@@ -297,17 +303,4 @@ public class Main {
                 }
             }else{
                 System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");
-            }
-        }while (stillPlaying);
-
-        userInput.close();
-
-        if (userResponse.equals("EXIT")|| userResponse.equals("QUIT")) {
-            System.out.println("You have left the game. Shame. Looks like your character will be trapped in that cave forever...");
-        } else if(Player.player.die()){
-            System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
-        } else { 
-            System.out.println("To be edited...");
-        }
-    }
-}
+           

@@ -37,15 +37,3 @@ public class Item {
         return description;
     }
     /**
-     * Overrides the toString() method to return the name and description of the item.
-     * 
-     * @return the name and description of the item
-     */
-    @Override
-    public String toString() {
-        return name + ": " + description;
-    }
-
-
-    
-}

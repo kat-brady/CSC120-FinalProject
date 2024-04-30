@@ -7,6 +7,8 @@ public class PuddleRoom extends Room {
 
     /** The robe of a cult member hanging on a stalactite. */
     public static Item cultRobe;
+    private boolean turnedEast;
+    private boolean filledBottle;
 
     /**
      * Constructs a new PuddleRoom object.
@@ -16,6 +18,8 @@ public class PuddleRoom extends Room {
         Main.itemLocation.put(accessCard, "puddleRoom");
         cultRobe = new Item("cult robe", "A robe worn by a cult member, found hanging on a stalactite.");
         Main.itemLocation.put(cultRobe, "puddleRoom");
+        turnedEast = false;
+        filledBottle = false;
     }
 
     /*
@@ -39,6 +43,7 @@ public class PuddleRoom extends Room {
      */
     public void east(){
         System.out.println("You turn east and see a puddle with an access card inside. Hmm... there is somethinig special about the water.");
+        turnedEast = true;
     }
 
     /*
@@ -81,6 +86,18 @@ public class PuddleRoom extends Room {
      */
     public void drop(Item item) {
         super.drop(item);
+    }
+    public void fillBottle(Item item){
+        if(turnedEast){
+            if (Main.inventory.contains(SuppliesRoom.bottle)){
+                filledBottle = true;
+                System.out.println("You filled the bottle with water from the puddle! You are so cool it even rhymes.");
+            }else{
+                System.out.println("You don't have a bottle to fill!");
+            }
+        }else{
+            System.out.println("You can't fill the bottle here!");
+        }
     }
     /*
      * Creates an instance of PuddleRoom

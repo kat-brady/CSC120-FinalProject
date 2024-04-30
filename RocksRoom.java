@@ -88,8 +88,8 @@ public class RocksRoom extends Room {
     public void south(){
         super.south();
         System.out.println("You turn south and see a big entrance. You enter the room with the defeated cult member.");
-        Main.location.replace("rocksroom",false);
-        Main.location.replace("fightroom", true);
+        Main.location.replace("rocksRoom",false);
+        Main.location.replace("fightRoom", true);
     }
 
     /*

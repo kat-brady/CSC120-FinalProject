@@ -176,4 +176,3 @@ public class FightRoom extends Room{
      * Initializes an instance of the class
      */
     static FightRoom fightRoom = new FightRoom();
-}

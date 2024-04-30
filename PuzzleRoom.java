@@ -64,8 +64,8 @@ public class PuzzleRoom extends Room {
      */
     public void down(){
         System.out.println("You go down and leave the room");
-        Main.location.replace("puzzleroom", false);
-        Main.location.replace("rocksroom", true);
+        Main.location.replace("puzzleRoom", false);
+        Main.location.replace("rocksRoom", true);
     }
 
     
