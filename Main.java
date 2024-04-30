@@ -262,17 +262,27 @@ public class Main {
                 }else{
                     BookRoom.bookRoom.swipeCard();
                 }
-            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")){
+            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")){
+                attackMethod = userResponse.toLowerCase();
                 if(location.containsKey("fightRoom")){
                     if(location.get("fightRoom")==true){
-                        attackMethod = userResponse.toLowerCase();
+                        if(!attackMethod.equals("heal")){
                         FightRoom.fightRoom.attack();
+                        }else{
+                            System.out.println("There is nothing for you to heal yourself with.");
+                        }
                     }else{
                         System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
                 }else if(location.containsKey("demonRoom")){
                     if(location.get("demonRoom")==true){
-                        System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
+                        if(attackMethod.equals("kick")||attackMethod.equals("punch")||attackMethod.equals("trip")||attackMethod.equals("slap")){
+                            System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
+                        }else{
+                            DemonRoom.demonRoom.attack();
+                        }
+                    }else{
+                        System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
                 }else{
                     System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");

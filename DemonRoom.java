@@ -121,42 +121,42 @@ public class DemonRoom extends Room{
         }
     }
 
-    /**
+    /*
      * Modifies method from parent class Room
      */
     public void west() {
         System.out.println("There is no point in trying to go west. Javaelith will just follow you there.");
     }
 
-    /**
+    /*
      * Modifies east method from Parent class Room
      */
     public void east() {
         System.out.println("There is no point in trying to go east. Javaelith will just follow you there.");
     }
 
-    /**
+    /*
      * Modifies north method from parent class Room
      */
     public void north() {
         System.out.println("There is no point in trying to go north. Javaelith will just follow you there.");
     }
 
-    /**
+    /*
      * Modifies south method from parent class Room
      */
     public void south() {
         System.out.println("There is no point in trying to go south. Javaelith will just follow you there.");
     }
 
-    /**
+    /*
      * Modifies up method from parent class Room
      */
     public void up() {
         System.out.println("There is no point in trying to go up. Javaelith will just follow you there.");
     }
 
-    /**
+    /*
      * Modifies down method from parent class Room
      */
     public void down() {
