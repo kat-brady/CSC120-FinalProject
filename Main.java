@@ -303,4 +303,17 @@ public class Main {
                 }
             }else{
                 System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");
-           
+            }
+        }while (stillPlaying);
+
+        userInput.close();
+
+        if (userResponse.equals("EXIT")|| userResponse.equals("QUIT")) {
+            System.out.println("You have left the game. Shame. Looks like your character will be trapped in that cave forever...");
+        } else if(Player.player.die()){
+            System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
+        } else { 
+            System.out.println("To be edited...");
+        }
+    }
+}
