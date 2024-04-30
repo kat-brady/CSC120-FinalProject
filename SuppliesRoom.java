@@ -89,4 +89,13 @@ public class SuppliesRoom extends Room{
     /*
      * Utilizes down method from parent class Room
      */
-    pub
+    public void down(){
+        super.down();
+    }
+
+    /*
+     * Creates an instance of the SuppliesRoom class
+     */
+    static SuppliesRoom suppliesRoom = new SuppliesRoom();
+
+}
