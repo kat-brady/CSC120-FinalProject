@@ -127,7 +127,7 @@ public class FightRoom extends Room{
         if(!isDefeated){
             System.out.println("You can't escape, you need to fight for your own safety!");
         }else{
-            if (Main.location.contains("rocksRoom")){
+            if (Main.location.containsKey("rocksRoom")){
                 Main.location.replace("rocksRoom", true);
                 Main.location.replace("fightRoom", false);
             }else{
