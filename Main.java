@@ -65,54 +65,177 @@ public class Main {
                 if(userResponse.contains("NOTE")){
                     if(location.containsKey("bookRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("bookRoom")){
                         BookRoom.bookRoom.pickUp(BookRoom.note);
-                    } else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(BookRoom.note);
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("suppliesRoom")){
+                        SuppliesRoom.suppliesRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(BookRoom.note);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(BookRoom.note) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(BookRoom.note);
+                    }else{
+                        System.out.println("There is no note here.");
                     }
                 }else if(userResponse.contains("SPEAR")){
                     if(location.containsKey("fightRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("fightRoom")){
                         FightRoom.fightRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("suppliesRoom")){
+                        SuppliesRoom.suppliesRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(FightRoom.spear);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(FightRoom.spear) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(FightRoom.spear);
                     }else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                        System.out.println("There is no spear here.");
                     }
                 }else if(userResponse.contains("CARD")) {
                     if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("puddleRoom")){
                         PuddleRoom.puddleRoom.pickUp(PuddleRoom.accessCard);
-                    }
-                    else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("suppliesRoom")){
+                        SuppliesRoom.suppliesRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(PuddleRoom.accessCard);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(PuddleRoom.accessCard) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(PuddleRoom.accessCard);
+                    }else{
+                        System.out.println("There is no access card here.");
                     }
                 }else if(userResponse.contains("ROBE")) {
                     if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("puddleRoom")){
                         PuddleRoom.puddleRoom.pickUp(PuddleRoom.cultRobe);
-                    }
-                    else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("suppliesRoom")){
+                        SuppliesRoom.suppliesRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(PuddleRoom.cultRobe);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(PuddleRoom.cultRobe) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(PuddleRoom.cultRobe);
+                    }else{
+                        System.out.println("There is no robe here.");
                     }
                 }else if(userResponse.contains("SALT")) {
                     if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("suppliesRoom")){
                         SuppliesRoom.suppliesRoom.pickUp(SuppliesRoom.salt);
-                    }
-                    else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(SuppliesRoom.salt);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(SuppliesRoom.salt) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(SuppliesRoom.salt);
+                    }else{
+                        System.out.println("There is no salt shaker here.");
                     }
                 }else if(userResponse.contains("MATCHES")) {
                     if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("suppliesRoom")){
                         SuppliesRoom.suppliesRoom.pickUp(SuppliesRoom.matches);
-                    }
-                    else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(SuppliesRoom.matches);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(SuppliesRoom.matches) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(SuppliesRoom.matches);
+                    }else{
+                        System.out.println("There are no matches here.");
                     }
                 }else if(userResponse.contains("BOTTLE")) {
                     if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("suppliesRoom")){
                         SuppliesRoom.suppliesRoom.pickUp(SuppliesRoom.bottle);
-                    }
-                    else{
-                        System.out.println("There is no " + userResponse.toLowerCase() + " here.");
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("bookRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("bookRoom")){
+                        BookRoom.bookRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(SuppliesRoom.bottle);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(SuppliesRoom.bottle) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(SuppliesRoom.bottle);
+                    }else{
+                        System.out.println("There is no bottle here.");
                     }
                 }else if(userResponse.contains("CANDLE")){
                     if(location.containsKey("bookRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("bookRoom")){
                         BookRoom.bookRoom.pickUp(BookRoom.candle);
-                    } else{
+                    }else if(location.containsKey("suppliesRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("suppliesRoom")){
+                        SuppliesRoom.suppliesRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("puddleRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("puddleRoom")){
+                        PuddleRoom.puddleRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("fightRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("fightRoom")){
+                        FightRoom.fightRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("dungeon")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("dungeon")){
+                        Dungeon.dungeon.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("rocksRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("rocksRoom")){
+                        RocksRoom.rocksRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("puzzleRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("puzzleRoom")){
+                        PuzzleRoom.puzzleRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("surveillanceRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("surveillanceRoom")){
+                        SurveillanceRoom.surveillanceRoom.pickUp(BookRoom.candle);
+                    }else if(location.containsKey("cultRoom")==true && itemLocation.containsKey(BookRoom.candle) && itemLocation.containsValue("cultRoom")){
+                        CultRoom.cultRoom.pickUp(BookRoom.candle);
+                    }else{
                         System.out.println("There is no candle here.");
                     }
                 }else if(userResponse.contains("BOOK")){
@@ -500,6 +623,8 @@ public class Main {
             }else if(userResponse.contains("INVENTORY")){ 
                 for(Item item: inventory){
                     System.out.println(item);
+                }if(inventory.isEmpty()){
+                    System.out.println("Your inventory is empty.");
                 }
             }else{
                 System.out.println("You don't think that '" + userResponse.toLowerCase() + "' is going to help you escape, so you do nothing.");

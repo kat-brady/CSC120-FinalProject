@@ -14,7 +14,7 @@ public class BookRoom extends Room{
      */
     public BookRoom(){
         //Initialize note
-        note = new Item("note", "A note found hidden in the margins of the book. It seems much newer and is written in English. It reads: 'With beasts so large as Javaelith, normal techniques won't work. Carry with you water, pure and divine; salt for safety; and use your wits. He is a dangerous foe, one you would be wise to avoid.'");
+        note = new Item("note", "A note found hidden in the margins of the book. It seems much newer and is written in English. It reads: 'With beasts so large as Javaelith, normal techniques won't work. Carry with you water, pure and divine; salt for safety; and use your wits. It is a dangerous foe, one you would be wise to avoid.'");
         Main.itemLocation.put(note, "bookRoom");
         // Initialize the candle item
         candle = new Item("candle", "A partially melted candle.");
