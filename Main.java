@@ -326,7 +326,7 @@ public class Main {
             System.out.println("At Javaelith's disappearance, you notice a ladder leading upwards in the corner. You climb it eagerly.\nYou're out of the cave, standing atop a mountain. Ah, fresh air! How you missed this feeling.\nYou're fully convinced that you're traumatized by this experience, but at least you can go home now.");
             System.out.println("You have won! Congratulations, player!");
         }else { 
-            System.out.println("An unexpected condition has ended your game.");
+            System.out.println("An unexpected condition has ended your game...");
         }
     }
 }
