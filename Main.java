@@ -125,7 +125,189 @@ public class Main {
                     System.out.println("You can't pick that up!");
                     }
             }else if(userResponse.contains("DROP")||userResponse.contains("PUT DOWN")||userResponse.contains("LEAVE")){
-                //write drop code
+                if(location.get("dungeon")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        Dungeon.dungeon.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        Dungeon.dungeon.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                       Dungeon.dungeon.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        Dungeon.dungeon.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        Dungeon.dungeon.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        Dungeon.dungeon.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        Dungeon.dungeon.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                       Dungeon.dungeon.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("bookRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        BookRoom.bookRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        BookRoom.bookRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        BookRoom.bookRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        BookRoom.bookRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        BookRoom.bookRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        BookRoom.bookRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        BookRoom.bookRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        BookRoom.bookRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("puddleRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        PuddleRoom.puddleRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        PuddleRoom.puddleRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        PuddleRoom.puddleRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        PuddleRoom.puddleRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        PuddleRoom.puddleRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        PuddleRoom.puddleRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        PuddleRoom.puddleRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        PuddleRoom.puddleRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("fightRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        FightRoom.fightRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        FightRoom.fightRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        FightRoom.fightRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        FightRoom.fightRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        FightRoom.fightRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        FightRoom.fightRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        FightRoom.fightRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        FightRoom.fightRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("rocksRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        RocksRoom.rocksRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        RocksRoom.rocksRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        RocksRoom.rocksRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        RocksRoom.rocksRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        RocksRoom.rocksRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        RocksRoom.rocksRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        RocksRoom.rocksRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        RocksRoom.rocksRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("puzzleRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        PuzzleRoom.puzzleRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        PuzzleRoom.puzzleRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        PuzzleRoom.puzzleRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        PuzzleRoom.puzzleRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        PuzzleRoom.puzzleRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        PuzzleRoom.puzzleRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        PuzzleRoom.puzzleRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        PuzzleRoom.puzzleRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("suppliesRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        SuppliesRoom.suppliesRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        SuppliesRoom.suppliesRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        SuppliesRoom.suppliesRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        SuppliesRoom.suppliesRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        SuppliesRoom.suppliesRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        SuppliesRoom.suppliesRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        SuppliesRoom.suppliesRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        SuppliesRoom.suppliesRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                } else if(location.get("surveillanceRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        SurveillanceRoom.surveillanceRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        SurveillanceRoom.surveillanceRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        SurveillanceRoom.surveillanceRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        SurveillanceRoom.surveillanceRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        SurveillanceRoom.surveillanceRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        SurveillanceRoom.surveillanceRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        SurveillanceRoom.surveillanceRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        SurveillanceRoom.surveillanceRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                }else if(location.get("cultRoom")==true){
+                    if(userResponse.contains("NOTE")&& Player.player.hasItemInInventory(BookRoom.note)){
+                        CultRoom.cultRoom.drop(BookRoom.note);
+                    }else if(userResponse.contains("SPEAR")&& Player.player.hasItemInInventory(FightRoom.spear)){
+                        CultRoom.cultRoom.drop(FightRoom.spear);
+                    }else if(userResponse.contains("CARD")&& Player.player.hasItemInInventory(PuddleRoom.accessCard)) {
+                        CultRoom.cultRoom.drop(PuddleRoom.accessCard);
+                    }else if(userResponse.contains("ROBE")&& Player.player.hasItemInInventory(PuddleRoom.cultRobe)) {
+                        CultRoom.cultRoom.drop(PuddleRoom.cultRobe);
+                    }else if(userResponse.contains("SALT") && Player.player.hasItemInInventory(SuppliesRoom.salt)) {
+                        CultRoom.cultRoom.drop(SuppliesRoom.salt);
+                    }else if(userResponse.contains("MATCHES") && Player.player.hasItemInInventory(SuppliesRoom.matches)) {
+                        CultRoom.cultRoom.drop(SuppliesRoom.matches);
+                    }else if(userResponse.contains("BOTTLE") && Player.player.hasItemInInventory(SuppliesRoom.bottle)) {
+                        CultRoom.cultRoom.drop(SuppliesRoom.bottle);
+                    }else if(userResponse.contains("CANDLE") && Player.player.hasItemInInventory(BookRoom.candle)){
+                        CultRoom.cultRoom.drop(BookRoom.candle);
+                    }else{
+                        System.out.println("You are not able to drop that.");
+                        }
+                }else if(location.get("demonRoom")==true){
+                    System.out.println("You're in the middle of battling a demon here... now is not the time to drop something!");
+                }
             }else if (userResponse.contains("WEST")) {
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.west();
