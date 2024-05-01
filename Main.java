@@ -124,6 +124,8 @@ public class Main {
                 }else{
                     System.out.println("You can't pick that up!");
                     }
+            }else if(userResponse.contains("DROP")||userResponse.contains("PUT DOWN")||userResponse.contains("LEAVE")){
+                //write drop code
             }else if (userResponse.contains("WEST")) {
                 if(location.get("dungeon")==true){
                     Dungeon.dungeon.west();

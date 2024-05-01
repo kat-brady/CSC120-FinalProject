@@ -8,7 +8,7 @@ public class PuddleRoom extends Room {
     /** The robe of a cult member hanging on a stalactite. */
     public static Item cultRobe;
     private boolean turnedEast;
-    private boolean filledBottle;
+    public boolean filledBottle;
 
     /**
      * Constructs a new PuddleRoom object.
