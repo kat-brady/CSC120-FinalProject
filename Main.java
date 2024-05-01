@@ -303,6 +303,12 @@ public class Main {
                 } else{
                     System.out.println("There is nothing to climb here.");
                 }
+            }else if (userResponse.contains("FILL")){
+                if (location.get("puddleRoom")){
+                    PuddleRoom.puddleRoom.fillBottle(null);
+                } else{
+                    System.out.println("You can't fill the bottle here!");
+                }
             }else if (userResponse.contains("EXIT") || userResponse.contains("QUIT")) {
                 stillPlaying = false;
             }else if(userResponse.contains("HELP")||userResponse.contains("INFO")) {
