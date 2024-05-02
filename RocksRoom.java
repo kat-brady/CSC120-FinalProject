@@ -78,6 +78,7 @@ public class RocksRoom extends Room {
      */
     public void north() {
         super.north();
+        climbedRocks = false;
         turnednorth = true;
         System.out.println("You turn north and see large rocks stretched upwards. Maybe they lead somewhere...");
     }

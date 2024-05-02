@@ -33,6 +33,7 @@ public class PuzzleRoom extends Room {
      * Utilizes east method from parent class Room
      */
     public void east(){
+        solved = false;
         System.out.println("You turn east and see a large, ornate pedestal.");
         System.out.println("A voice echoes through the chamber, enigmatic and cryptic.");
         interact();

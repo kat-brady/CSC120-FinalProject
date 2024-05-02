@@ -7,8 +7,10 @@ import java.util.*;
 public class CultRoom extends Room{
     boolean isDefeated = false; //while the cult membes have not been defeated, the boolean is false to limit movement
     int cultMembersHealth = 100; //initializes cult members' health
+    List<Integer> possibleHolyEffect = Arrays.asList(10, 20, 25, 30, 30, 30, 30, 40, 40, 40, 45, 50, 55, 60);//possible holy water effect
     List<Integer> possibleDamageToFoe = Arrays.asList(0, 0, 20, 20, 20, 20, 15, 5, 5, 5, 10, 30, 23, 26); //possible damage you could deal
     List<Integer> possibleDamageToPlayer = Arrays.asList(0, 0, 5, 5, 2, 4, 5, 6, 8, 9, 10); //possible damage they could deal
+    int holyWaterLeft = 3;//the amount of times you can use holy water
     Random random = new Random();
 
     /*
@@ -28,6 +30,7 @@ public class CultRoom extends Room{
         if(!isDefeated && Player.player.health>0){
             int foeDamage = possibleDamageToFoe.get(random.nextInt(possibleDamageToFoe.size()));
             int playerDamage = possibleDamageToPlayer.get(random.nextInt(possibleDamageToPlayer.size()));
+            int holyEffect = possibleHolyEffect.get(random.nextInt(possibleHolyEffect.size()));
             if(foeDamage==0){
                 System.out.println("You attempt to " + attackMethod + " your opponent, but you miss! Their health remains at " + cultMembersHealth + ".");
             }else if(attackMethod.equals("kick")){
@@ -42,9 +45,17 @@ public class CultRoom extends Room{
             }else if(attackMethod.equals("trip")){
                 cultMembersHealth-=foeDamage;
                 System.out.println("You sweep your opponent's legs, causing them to fall straight down. They take " + foeDamage + " damage. Their robe moves slightly, causing you see the bottom of their legs. Are those... hooves?? They quickly get back up, now having a health of " + cultMembersHealth + ".");
-            }else if(attackMethod.equals("fireball")){
+            }else if(attackMethod.equals("fire")){
                 cultMembersHealth-=foeDamage;
                 System.out.println("You cast a searing fireball directly at the group of cult members, causing them to stagger back as flames engulf them, dealing them " + foeDamage + " damage, putting their health at " + cultMembersHealth + ". As they deal with consequences, cult members unleash a noxious gas that seeps into the room, choking the air and making it difficult to breathe for you.");
+            }else if (attackMethod.contains("holy water") && attackMethod.contains("heal") && holyWaterLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.bottle) && PuddleRoom.puddleRoom.filledBottle){
+                if(holyWaterLeft>=1){
+                Player.player.health+=holyEffect;
+                holyWaterLeft-=1;
+                System.out.println("You take a swig of the holy water. You feel your body recovering as you gain back " + holyEffect + " health. Your health is now " + Player.player.health + ". It seems like there are about " + holyWaterLeft + " splash(es) of water left in the bottle.");
+                }else{
+                    System.out.println("No holy water left anymore!");
+                }
             }if(cultMembersHealth<=0){
                 isDefeated = true;
                 System.out.println("They're weak now! One more blow should finish them off.");
