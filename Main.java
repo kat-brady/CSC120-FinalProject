@@ -591,6 +591,10 @@ public class Main {
                     }else{
                         System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
+                }else if(location.containsKey("cultRoom")){
+                    if(location.get("cultRoom")==true){
+                            CultRoom.cultRoom.attack();
+                    }
                 }else{
                     System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                 }
