@@ -563,13 +563,13 @@ public class Main {
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.up();
                 }
-            }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN")){
+            }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN") || userResponse.contains("USE")){
                 if(!location.containsKey("bookRoom")||location.get("bookRoom")==false){
                     System.out.println("There is nothing to " + userResponse.toLowerCase() + " in this room.");    
                 }else{
                     BookRoom.bookRoom.swipeCard();
                 }
-            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")){
+            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")||userResponse.contains("USE")){
                 attackMethod = userResponse.toLowerCase();
                 if(location.containsKey("fightRoom") && location.get("fightRoom")==true){
                     if(location.get("fightRoom")==true){

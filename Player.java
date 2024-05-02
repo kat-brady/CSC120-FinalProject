@@ -97,5 +97,5 @@ public class Player {
         return Main.inventory.contains(item);
     }
 
-    static Player player = new Player(100);
+    static Player player = new Player(300);
 }

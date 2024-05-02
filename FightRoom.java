@@ -6,7 +6,7 @@ import java.util.*;
  */
 public class FightRoom extends Room{
     boolean isDefeated = false; //while the cult member has not been defeated, the boolean is false to limit movement
-    int cultMemberHealth = 100; //initializes cult member's health
+    int cultMemberHealth = 60; //initializes cult member's health
     List<Integer> possibleDamageToFoe = Arrays.asList(0, 0, 1, 10, 10, 10, 10, 11, 12, 15, 5, 5, 18, 19, 20, 23, 26); //possible damage you could deal
     List<Integer> possibleDamageToPlayer = Arrays.asList(0, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10); //possible damage they could deal
     Random random = new Random();
