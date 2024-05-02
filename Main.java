@@ -571,7 +571,7 @@ public class Main {
                 }
             }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")){
                 attackMethod = userResponse.toLowerCase();
-                if(location.containsKey("fightRoom")){
+                if(location.containsKey("fightRoom") && location.get("fightRoom")==true){
                     if(location.get("fightRoom")==true){
                         if(!attackMethod.equals("heal")){
                         FightRoom.fightRoom.attack();
@@ -581,7 +581,7 @@ public class Main {
                     }else{
                         System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
-                }else if(location.containsKey("demonRoom")){
+                }else if(location.containsKey("demonRoom") && location.get("demonRoom")==true){
                     if(location.get("demonRoom")==true){
                         if(attackMethod.equals("kick")||attackMethod.equals("punch")||attackMethod.equals("trip")||attackMethod.equals("slap")){
                             System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
@@ -591,7 +591,7 @@ public class Main {
                     }else{
                         System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                     }
-                }else if(location.containsKey("cultRoom")){
+                }else if(location.containsKey("cultRoom")&& location.get("cultRoom")==true){
                     if(location.get("cultRoom")==true){
                             CultRoom.cultRoom.attack();
                     }
