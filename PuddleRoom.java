@@ -42,7 +42,7 @@ public class PuddleRoom extends Room {
      * Utilizes east method from parent class Room
      */
     public void east(){
-        System.out.println("You turn east and see a puddle with an access card inside. Hmm... there is somethinig special about the water.");
+        System.out.println("You turn east and see a puddle with an access card inside. Hmm... there is something special about the water.");
         turnedEast = true;
     }
 
