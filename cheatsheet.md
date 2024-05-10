@@ -13,7 +13,7 @@ Game Commands:
         Drop/Put Down/Leave [Item]: Discard an item from your inventory.
         Swipe/Scan: Use the access card to open the door
         Inventory: View the items you are carrying.
-        Fight/Kick/Slap/Fire/Punch/Trip/Heal: Engage in combat with adversaries.
+        Fight/Kick/Slap/Fire/Punch/Trip/Heal/Candle/Spear/Fire/Water: Engage in combat with adversaries.
         Watch: Get information from the Surveillance Room.
         Fill: Fill the bottle with holy water in Puddle Room
     Miscellaneous Commands:
@@ -22,7 +22,7 @@ Game Commands:
 Game Challenges:
     Fight a cult member in Fight Room: 
         Objective: Overcome the cult member in the Fight Room to progress further.
-        Strategy: Use your combat skills and available resources wisely to defeat the cult member and emerge victorious.
+        Strategy: Use your combat skills wisely to defeat the cult member and emerge victorious.
     Solve the puzzle in the Puzzle Room:
         Objective: Solve the riddle to proceed to the next room.
         Strategy: The answer to the riddle is "exorcism".
@@ -42,7 +42,7 @@ Ideal Sequence for Winning:
     Solve the puzzle in the Puzzle Room: go "east", answer "exorcism" to leave the location.
     Gather Essential Items in the Supplies Room: go "east", take bottle, take salt, go "south", take matches.
     Go back to Puddle Room to fill the water bottle: go "west" to leave the Supplies Room, go "down" to leave the Puzzle Room, go "south" to leave the Rocks Room, go "east" to leave the Fight Room, go "east" to leave the Book Room, go "east" to approach the puddle, "fill" the bottle (you will be able to use it later).
-    Go back to Supplies Room: go "west" twice, go "north" twice, "climb", go "east", answer "exorcism", go "north" to leave the Supplies Room.
+    Go back to Supplies Room: go "west" twice, go "north" twice, "climb", go "east", go "north" to leave the Supplies Room.
     Watch in Surveillance Room: "watch" three times to get information about the player's past, go "east".
     Fight the Cult in Cult Room: use fight/kick/slap/punch/trip/fire/spear commands to attack the cult member, "heal" to increase player's health; after defeating, go "up" to leave the location.
     Fight the Javaelith in Demon Room: use "heal" command to heal, "fire" to cast fireballs; type "light candle", "salt", "holy water", "spear" to attack.
