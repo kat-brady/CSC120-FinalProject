@@ -31,7 +31,7 @@ public class CultRoom extends Room {
             int playerDamage = possibleDamageToPlayer.get(random.nextInt(possibleDamageToPlayer.size()));
             if (cultDamage == 0) {
                 System.out.println("Your attempt to " + attackMethod + " the cult members misses! Their combined health remains at " + cultMembersHealth + ".");
-            } else if (attackMethod.equals("fire")) {
+            } else if (attackMethod.contains("fire")) {
                 cultMembersHealth -= cultDamage;
                 System.out.println("You cast a searing fireball directly at the cult members, causing them to stagger back as flames engulf them, dealing " + cultDamage + " damage, putting their combined health at " + cultMembersHealth + ". As they deal with the consequences, cult members unleash a noxious gas that seeps into the room, choking the air and making it difficult to breathe for you.");
             } else {
@@ -78,7 +78,7 @@ public class CultRoom extends Room {
         if (!isDefeated) {
             System.out.println("As you look around, you find yourself surrounded by hooded figures, chanting in unison. They notice you and halt their ritual, turning their attention towards you with malice in their eyes. You are confronted by the entire cult, ready to defend their dark practices.");
         } else {
-            System.out.println("You survey the room. The cult members lie defeated on the floor, their robes stained with blood. To the east, a door remains open. It appears there might be a passage to the north.");
+            System.out.println("You survey the room. The cult members lie defeated on the floor, their robes stained with blood. In the corner, you see a ladder leading upwards... something within you beckons you to climb it.");
         }
     }
 

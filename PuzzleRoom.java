@@ -19,7 +19,7 @@ public class PuzzleRoom extends Room {
      * Adjusts look method from parent class Room
      */
     public void look(){
-        System.out.println("You look around the room with the air charged with mystery, and the dim torchlight casts eerie shadows on the ancient stone walls");
+        System.out.println("You look around the room with the air charged with mystery, and the dim torchlight casts eerie shadows on the ancient stone walls.");
     }
 
     /*
@@ -33,9 +33,7 @@ public class PuzzleRoom extends Room {
      * Utilizes east method from parent class Room
      */
     public void east(){
-        solved = false;
         System.out.println("You turn east and see a large, ornate pedestal.");
-        System.out.println("A voice echoes through the chamber, enigmatic and cryptic.");
         interact();
     }
 
@@ -74,17 +72,18 @@ public class PuzzleRoom extends Room {
      * Interacts with the puzzle in the room, allowing the player to attempt to solve it.
      */
     public void interact() {
+        if(!solved){
+            // Present the riddle puzzle to the player
+            System.out.println("A voice echoes through the chamber, enigmatic and cryptic.");
+            System.out.println("In whispers hushed, I cast out dread, with prayers and faith, evil I shred. What am I?");
+            while(!solved){
+                System.out.print("Your answer: ");
+                String playerAnswer = scanner.nextLine().trim().toLowerCase();
 
-        // Present the riddle puzzle to the player
-        System.out.println("In whispers hushed, I cast out dread, with prayers and faith, evil I shred. What am I?");
-        while(!solved){
-            System.out.print("Your answer: ");
-            String playerAnswer = scanner.nextLine().trim().toLowerCase();
-
-            // Check if the player's answer is correct
-            if (playerAnswer.equals("exorcism")) {
-                System.out.println("Congratulations! You've solved the puzzle. You may now proceed.");
-                solved = true;
+                 // Check if the player's answer is correct
+                if (playerAnswer.equals("exorcism")) {
+                    System.out.println("Congratulations! You've solved the puzzle. You may now proceed.");
+                    solved = true;
                 if (Main.location.contains("suppliesRoom")){
                     Main.location.replace("suppliesRoom", true);
                     Main.location.replace("puzzleRoom", false);
@@ -92,11 +91,22 @@ public class PuzzleRoom extends Room {
                     Main.location.put("suppliesRoom", true);
                     Main.location.replace("puzzleRoom", false);
                 }
-            } else {
-                System.out.println("Incorrect answer. Try again.");
-        }
+                }else {
+                    System.out.println("Incorrect answer. Try again.");
+                }
+            }
+        }else{
+            System.out.println("The mysterious powers that be seem to remember your answer from earlier, so you pass through the entry.");
+            if (Main.location.contains("suppliesRoom")){
+                Main.location.replace("suppliesRoom", true);
+                Main.location.replace("puzzleRoom", false);
+            }else{
+                Main.location.put("suppliesRoom", true);
+                Main.location.replace("puzzleRoom", false);
+            }
+        }   
     }
-    }
+
     /*
      * Utilizes pickUp method from Room class
      */

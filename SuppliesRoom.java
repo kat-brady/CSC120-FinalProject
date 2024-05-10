@@ -39,7 +39,7 @@ public class SuppliesRoom extends Room{
      * Adjusts look method from parent class Room
      */
     public void look(){
-        System.out.println("You are standing in a dimly lit storage room. Shelves line the walls, filled with assorted jars, bottles, and containers. Reminds you of kitchenette.");
+        System.out.println("You are standing in a dimly lit storage room. Shelves line the walls, filled with assorted jars, bottles, and containers. Reminds you of a kitchenette.");
     }
 
     /*
@@ -55,7 +55,7 @@ public class SuppliesRoom extends Room{
      * Utilizes east method from parent class Room
      */
     public void east(){
-        System.out.println("On the shelves to the east, you spot a small salt shaker and a water bottle nestled between rows of jars. Everything looks dusty.");
+        System.out.println("On the shelves to the east, you spot a small salt shaker and an empty water bottle nestled between rows of jars. Everything looks dusty.");
     }
 
     /*

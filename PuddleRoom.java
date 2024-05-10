@@ -42,8 +42,13 @@ public class PuddleRoom extends Room {
      * Utilizes east method from parent class Room
      */
     public void east(){
-        System.out.println("You turn east and see a puddle with an access card inside. Hmm... there is something special about the water.");
-        turnedEast = true;
+        if(Main.itemLocation.get(accessCard)=="puddleRoom"){
+            System.out.println("You turn east and see a puddle with an access card inside. Hmm... there is something special about the water.");
+            turnedEast = true;
+        }else{
+            System.out.println("You turn east and step into a shallow puddle. The water feels strange on your foot, almost as if it has some magical properties...");
+        }
+
     }
 
     /*
@@ -57,7 +62,11 @@ public class PuddleRoom extends Room {
      * Utilizes south method from parent class Room
      */
     public void south(){
-        System.out.println("You turn south on notice a piece of robe hanging on one of the stalactites. It reminds you of cults...");
+        if(Main.itemLocation.get(cultRobe)=="puddleRoom"){
+            System.out.println("You turn south and notice a piece of robe hanging on one of the stalactites. It reminds you of cults...");
+        }else{
+            System.out.println("You turn south and notice a number of stalactites and stalagmites in the cave. One of them feels sticky and smells faintly of iron...");
+        }
     }
 
     /*
