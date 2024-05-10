@@ -48,7 +48,7 @@ public class SurveillanceRoom extends Room{
     }
 
     /**
-     * Modifies east method from parent class Room to allow travel into CultRoom
+     * Modifies east method from parent class Room to allow player to travel into CultRoom
      */
     public void east() {
         System.out.println("To the east, there is a door. Unlike the one from earlier, it doesn't appear to have a scanner on it.\nYou try the handle, and the door creaks open. You pass through into a mysterious, dark room.");
