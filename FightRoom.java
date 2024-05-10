@@ -34,16 +34,16 @@ public class FightRoom extends Room{
             int playerDamage = possibleDamageToPlayer.get(random.nextInt(possibleDamageToPlayer.size()));
             if(foeDamage==0){
                 System.out.println("You attempt to " + attackMethod + " your opponent, but you miss! Their health remains at " + cultMemberHealth + ".");
-            }else if(attackMethod.equals("kick")){
+            }else if(attackMethod.contains("kick")){
                 cultMemberHealth-=foeDamage;
                 System.out.println("You deliver a swift kick to the cult member's shin! They take " + foeDamage + " damage, putting their health at " + cultMemberHealth + ".");
-            }else if(attackMethod.equals("punch")||attackMethod.equals("slap")){
+            }else if(attackMethod.contains("punch")||attackMethod.contains("slap")){
                 cultMemberHealth-=foeDamage;
                 System.out.println("You " + attackMethod + " the figure's concealed face! Their robe moves ever so slightly to reveal a sliver of sickly pale skin, but they quickly cover it again. They take " + foeDamage + " damage, putting their health at " + cultMemberHealth + ".");
-            }else if (attackMethod.equals("fight")){
+            }else if (attackMethod.contains("fight")){
                 cultMemberHealth-= foeDamage;
                 System.out.println("You square up with your adversary, dealing a few blows worth " + foeDamage + " damage. Their health is now " + cultMemberHealth);
-            }else if(attackMethod.equals("trip")){
+            }else if(attackMethod.contains("trip")){
                 cultMemberHealth-=foeDamage;
                 System.out.println("You sweep your opponent's legs, causing them to fall straight down. They take " + foeDamage + " damage. Their robe moves slightly, causing you see the bottom of their legs. Are those... hooves?? They quickly get back up, now having a health of " + cultMemberHealth + ".");
             }if(cultMemberHealth<=0){

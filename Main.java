@@ -37,7 +37,7 @@ public class Main {
          */
         do {
             userResponse = userInput.nextLine().toUpperCase(); //responses aren't case sensitive
-            if(Player.player.health<=0){
+            if(Player.player.health<=0 || DemonRoom.demonRoom.isDefeated){
                 stillPlaying = false;
             }else if (userResponse.contains("LOOK")){
                 if(location.get("dungeon")==true){
@@ -563,38 +563,28 @@ public class Main {
                 }else if(location.get("demonRoom")==true){
                     DemonRoom.demonRoom.up();
                 }
-            }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN") || userResponse.contains("USE")){
+            }else if (userResponse.contains("SWIPE")||userResponse.contains("SCAN") || userResponse.contains("CARD")){
                 if(!location.containsKey("bookRoom")||location.get("bookRoom")==false){
-                    System.out.println("There is nothing to " + userResponse.toLowerCase() + " in this room.");    
+                    System.out.println("You can't do that in this room.");    
                 }else{
                     BookRoom.bookRoom.swipeCard();
                 }
-            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")||userResponse.contains("USE")){
+            }else if(userResponse.contains("KICK")||userResponse.contains("PUNCH")||userResponse.contains("FIGHT")||userResponse.contains("TRIP")||userResponse.contains("SLAP")||userResponse.contains("HEAL")||userResponse.contains("CANDLE")||userResponse.contains("SPEAR")||userResponse.contains("LIGHT")||userResponse.contains("FIRE") ||userResponse.contains("SALT")||userResponse.contains("WATER")|| userResponse.contains("DRINK")){
                 attackMethod = userResponse.toLowerCase();
                 if(location.containsKey("fightRoom") && location.get("fightRoom")==true){
-                    if(location.get("fightRoom")==true){
-                        if(!attackMethod.equals("heal")){
+                    if(!attackMethod.contains("heal") && !attackMethod.contains("candle")&& !attackMethod.contains("spear")&& !attackMethod.contains("light")&& !attackMethod.contains("fire")&& !attackMethod.contains("salt")&& !attackMethod.contains("water")){
                         FightRoom.fightRoom.attack();
-                        }else{
-                            System.out.println("There is nothing for you to heal yourself with.");
-                        }
                     }else{
-                        System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
+                        System.out.println("That won't help you win this fight.");
                     }
                 }else if(location.containsKey("demonRoom") && location.get("demonRoom")==true){
-                    if(location.get("demonRoom")==true){
-                        if(attackMethod.equals("kick")||attackMethod.equals("punch")||attackMethod.equals("trip")||attackMethod.equals("slap")){
-                            System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
-                        }else{
-                            DemonRoom.demonRoom.attack();
-                        }
+                    if(attackMethod.equals("kick")||attackMethod.equals("punch")||attackMethod.equals("trip")||attackMethod.equals("slap")){
+                        System.out.println("You wouldn't want to fight Javaelith with your bare hands! You should use your supplies.");
                     }else{
-                        System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
+                        DemonRoom.demonRoom.attack();
                     }
                 }else if(location.containsKey("cultRoom")&& location.get("cultRoom")==true){
-                    if(location.get("cultRoom")==true){
-                            CultRoom.cultRoom.attack();
-                    }
+                    CultRoom.cultRoom.attack();
                 }else{
                     System.out.println("There is nothing for you to " + userResponse.toLowerCase() + " here.");
                 }
@@ -639,11 +629,11 @@ public class Main {
 
         if (userResponse.equals("EXIT")|| userResponse.equals("QUIT")) {
             System.out.println("You have left the game. Shame. Looks like your character will be trapped in that cave forever...");
-        } else if(Player.player.die()){
-            System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
         }else if(DemonRoom.demonRoom.isDefeated){
             System.out.println("At Javaelith's disappearance, you notice a ladder leading upwards in the corner. You climb it eagerly.\nYou're out of the cave, standing atop a mountain. Ah, fresh air! How you missed this feeling.\nYou're fully convinced that you're traumatized by this experience, but at least you can go home now.");
             System.out.println("You have won! Congratulations, player!");
+        }else if(Player.player.die()){
+            System.out.println("Everything fades to black...you have died! Maybe, in another life, you'd have been able to escape.");
         }else { 
             System.out.println("An unexpected condition has ended your game...");
         }

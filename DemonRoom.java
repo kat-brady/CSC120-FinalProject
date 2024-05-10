@@ -50,8 +50,9 @@ public class DemonRoom extends Room{
                 }
             }else if(attackMethod.contains("salt")){
                 if(saltLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.salt)){
+                    saltLeft-=1;
                     javaelithHealth-=saltDamage;
-                    System.out.println("You pull out the salt shaker and pour a bit of salt into your hand. There is about " + saltLeft + " handful(s) of salt left in the shaker now. You take your handful of salt and throw it into Javaelith's eyes. It roars angrily, appearing to be burning! It takes " + saltDamage + " damage, now having " + javaelithHealth + " health.");
+                    System.out.println("You pull out the salt shaker and pour a bit of salt into your hand. There's about " + saltLeft + " handful(s) of salt left in the shaker now. You take your handful of salt and throw it into Javaelith's eyes. It roars angrily, appearing to be burning! It takes " + saltDamage + " damage, now having " + javaelithHealth + " health.");
                 }else if(Player.player.hasItemInInventory(SuppliesRoom.salt) && saltLeft==0){
                     javaelithHealth-=5;
                     System.out.println("You retrieve the salt shaker to attack Javaelith, but it is empty! You throw the empty salt shaker at Javaelith instead, dealing a mere 5 damage. Javaelith seems to laugh at your pitiful attack! It now has " + javaelithHealth + " health, and your salt shaker shatters.");
@@ -62,15 +63,19 @@ public class DemonRoom extends Room{
             }else if(attackMethod.contains("fire")){
                 javaelithHealth-=fireDamage;
                 System.out.println("You cast a fireball towards Javaelith! The flames engulf the beast, dealing " + fireDamage + " damage. It growls and stomps its feet at you. It now has " + javaelithHealth + " health.");
-            }else if (attackMethod.contains("holy water") && attackMethod.contains("heal") && holyWaterLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.bottle) && PuddleRoom.puddleRoom.filledBottle){
+            }else if (attackMethod.contains("water") && attackMethod.contains("heal") || attackMethod.contains("drink") && holyWaterLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.bottle) && PuddleRoom.puddleRoom.filledBottle){
                 Player.player.health+=holyEffect;
                 holyWaterLeft-=1;
                 System.out.println("You take a swig of the holy water. You feel your body recovering as you gain back " + holyEffect + " health. Your health is now " + Player.player.health + ". It seems like there are about " + holyWaterLeft + " splash(es) of water left in the bottle.");
-            }else if(attackMethod.contains("holy water") && !attackMethod.contains("heal") && holyWaterLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.bottle) && PuddleRoom.puddleRoom.filledBottle){
+            }else if(attackMethod.contains("water")&& attackMethod.contains("heal") || attackMethod.contains("drink") && Player.player.hasItemInInventory(SuppliesRoom.bottle) && (holyWaterLeft==0 || !PuddleRoom.puddleRoom.filledBottle)){
+                javaelithHealth-=5;
+                Player.removeItemFromInventory(SuppliesRoom.bottle);
+                System.out.println("You attempt to heal yourself with the holy water, but not a single drop is left! Instead, you throw the bottle at Javaelith. It swallows the bottle whole, taking 5 damage due to the discomfort. Its health is now " + javaelithHealth + " and you no longer have a bottle.");
+            }else if(attackMethod.contains("water") && !attackMethod.contains("heal") && !attackMethod.contains("drink") && holyWaterLeft>0 && Player.player.hasItemInInventory(SuppliesRoom.bottle) && PuddleRoom.puddleRoom.filledBottle){
                 javaelithHealth-=holyEffect;
                 holyWaterLeft-=1;
                 System.out.println("You splash some holy water on Javaelith! The water seems to burn it. It screeches and writhes in pain, taking " + holyEffect + " damage. Its health is now " + javaelithHealth + " and there appear to be " + holyWaterLeft + " splash(es) of water left in the bottle.");
-            }else if(attackMethod.contains("holy water")&& !attackMethod.contains("heal") && Player.player.hasItemInInventory(SuppliesRoom.bottle) && (holyWaterLeft==0 || !PuddleRoom.puddleRoom.filledBottle)){
+            }else if(attackMethod.contains("water")&& !attackMethod.contains("heal") && !attackMethod.contains("drink") && Player.player.hasItemInInventory(SuppliesRoom.bottle) && (holyWaterLeft==0 || !PuddleRoom.puddleRoom.filledBottle)){
                 javaelithHealth-=5;
                 Player.removeItemFromInventory(SuppliesRoom.bottle);
                 System.out.println("You attempt to throw holy water on Javaelith, but your bottle is empty! Instead, you throw the bottle at it. It swallows the bottle whole, taking 5 damage due to the discomfort. Its health is now " + javaelithHealth + " and you no longer have a bottle.");
